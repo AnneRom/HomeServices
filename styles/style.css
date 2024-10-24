@@ -57,11 +57,12 @@ button {
 }
 
 body {
-    font-family: Rubik;
-    font-size: 0.875rem;
-    color: var(--Greays-White);
-
-    background-color: var(--Color-Dark-green);
+    font-family: "Plus Jakarta Sans";
+    font-size: clamp(1rem, 1.125rem, 1.125rem);/*1 параметр - мінімальне значення, 2 параметр - надаємо йому перевагу, 3 параметр - максимальне значення*/
+    color: var(--Neutural-Grey-1);
+    background-color: var(--Neutural-White);
+    max-width: 120rem;
+    min-width: 20rem;/*320 - ширина телефону*/
 }
 
 .wrapper {
@@ -77,22 +78,38 @@ body {
 
 /* Налаштування адаптиву */
 [class*="__container"] {
-    max-width: 52.5rem;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    max-width: 100rem;/*1445px - розмір меньшого контейнера*/
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
     margin: 0 auto;
 }
 
 /* Модулі */
-.title {
-    font-family: Merriweather;
-    color: var(--Greays-White);
-    font-size: 1.875rem;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 130%;
+.block-title {
+    display: grid;
+    gap: 1.5rem;
 }
-
-.title__dark {
-    color: var(--Color-Dark-green);
+.block-title-center {
+    text-align: center;
+}
+.block-title-inline {
+    grid-template-columns: minmax(auto, 747px) minmax(auto, 613px);
+    justify-content: space-between;
+    align-items: end;
+}
+.block-title__title {
+    color: var(--Neutural-Black);
+    font-size: clamp(32px, 52px, 52px);
+    font-weight: 700;
+    line-height: 1.23;
+}
+.block-title__title-big {
+    font-size: clamp(32px, 52px, 52px);
+}
+.block-title__title-white {
+    color: var(--Neutural-White);
+}
+.block-title__text {
+    font-weight: 400;
+    line-height: 1.56;
 }
