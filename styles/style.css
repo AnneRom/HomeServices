@@ -1,0 +1,98 @@
+@import url(https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:regular,600,700,800);
+
+/* #region Обнулення стилів*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    min-width: 20rem;
+    line-height: 1;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+button {
+    cursor: pointer;
+    color: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    background-color: transparent;
+}
+/* #endregion */
+
+/* Стилі за замовченням */
+:root {
+    --Primary-Dark-Blue-1: #142257;
+    --Primary-Dark-Blue-2: #1F3584;
+    --Neutural-Grey-1: #545971;
+    --Neutural-Grey-3: #9EA3B5;
+    --Soft-Grey: #E3E6F0;
+    --Light-Grey: #F3F5F9;
+    --Primary-Sky-Blue: #15B2F5;
+    --Neutural-Black: #171921;
+    --Neutural-White: #FFF; 
+}
+
+body {
+    font-family: Rubik;
+    font-size: 0.875rem;
+    color: var(--Greays-White);
+
+    background-color: var(--Color-Dark-green);
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    flex: 1 1 auto;
+}
+
+/* Налаштування адаптиву */
+[class*="__container"] {
+    max-width: 52.5rem;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    margin: 0 auto;
+}
+
+/* Модулі */
+.title {
+    font-family: Merriweather;
+    color: var(--Greays-White);
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 130%;
+}
+
+.title__dark {
+    color: var(--Color-Dark-green);
+}
