@@ -54,11 +54,12 @@ button {
     --Primary-Sky-Blue: #15B2F5;
     --Neutural-Black: #171921;
     --Neutural-White: #FFF; 
+    --Pink: #FF5E5E;
 }
 
 body {
     font-family: "Plus Jakarta Sans";
-    font-size: clamp(1rem, 1.125rem, 1.125rem);/*1 параметр - мінімальне значення, 2 параметр - надаємо йому перевагу, 3 параметр - максимальне значення*/
+    font-size: clamp(1rem, 5vw, 1.125rem);/*1 параметр - мінімальне значення, 2 параметр - надаємо йому перевагу, 3 параметр - максимальне значення*/
     color: var(--Neutural-Grey-1);
     background-color: var(--Neutural-White);
     max-width: 120rem;
@@ -78,7 +79,7 @@ body {
 
 /* Налаштування адаптиву */
 [class*="__container"] {
-    max-width: 100rem;/*1445px - розмір меньшого контейнера*/
+    max-width: 90.3125rem;/*1445px - розмір меньшого контейнера*/
     padding-left: 1.875rem;
     padding-right: 1.875rem;
     margin: 0 auto;
@@ -99,12 +100,12 @@ body {
 }
 .block-title__title {
     color: var(--Neutural-Black);
-    font-size: clamp(32px, 52px, 52px);
+    font-size: clamp(32px, 5vw, 52px);
     font-weight: 700;
     line-height: 1.23;
 }
 .block-title__title-big {
-    font-size: clamp(32px, 52px, 52px);
+    font-size: clamp(44px, 5vw, 64px);
 }
 .block-title__title-white {
     color: var(--Neutural-White);
@@ -112,4 +113,66 @@ body {
 .block-title__text {
     font-weight: 400;
     line-height: 1.56;
+}
+
+/*Header*/
+.header {
+    background-color: var(--Primary-Dark-Blue-1);
+}
+.header__container {
+    min-height: 80px;
+    max-width: 1600px;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+}
+.header__logo {
+}
+.header__menu {
+}
+.menu {
+    justify-self: center;
+}
+.menu__body {
+}
+.menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 3px;
+    column-gap: clamp(15px, 5vw, 57px);
+}
+.menu__item {
+}
+.menu__link {
+    font-weight: 600;
+    line-height: 1.33;
+    color: var(--Neutural-White);
+}
+.menu__link:hover {
+    text-decoration: underline;
+}
+
+.header__schedule {
+    justify-self: end;
+    font-weight: 600;
+    line-height: 1.33;
+    color: var(--Neutural-White);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.header__schedule::before {
+    background-color: var(--Pink);
+    content: "";
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+}
+/*Burger*/
+.menu__icon {
+}
+.icon-menu {
+    display: none;
 }
