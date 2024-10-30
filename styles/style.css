@@ -165,7 +165,7 @@ body {
     font-weight: 600;
     line-height: 1.33;
     color: var(--Neutural-White);
-    display: flex;
+    /* display: flex; */
     align-items: center;
     gap: 10px;
 }
@@ -177,6 +177,21 @@ body {
     width: 12px;
     border-radius: 50%;
 }
+#bigscreen-schedule {
+    display: flex;
+}
+#mobile-schedule {
+    display: none;
+}
+@media (max-width: 767.98px) {
+    #bigscreen-schedule {
+        display: none;
+    }
+    #mobile-schedule {
+        display: flex;
+    }
+}
+
 /*Burger*/
 .menu__icon {
 }
@@ -185,13 +200,9 @@ body {
     cursor: pointer;
 }
 @media (max-width: 767.98px) {
-    .icon-menu {
-        display: block;
-        width: 24px;
-        height: 24px;
-    }
-    .menu__body {
-        display: none;
+    .header__logo {
+        position: relative;
+        z-index: 10;
     }
     .header__schedule {
         display: none;
@@ -202,16 +213,41 @@ body {
         justify-content: space-between;
         padding: 10px 24px;
     }
-    /* .menu__body {
+    .icon-menu {
+        display: block;
+        width: 24px;
+        height: 24px;
+        position: relative;
+        z-index: 10;
+    }
+    .menu__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
         position: fixed;
-        width: 100%;
-        height: 100%;
         top: 0;
         right: 0;
-        background-color: var(--Primary-Dark-Blue-2);
+        width: 50%;
+        height: 100vh;
+        overflow: auto;
+        background-color: var(--Primary-Dark-Blue-1);
+        padding: 88px 24px 36px 24px;
+        transform: translateX(100%); 
+        transition: transform 0.3s ease;
+        z-index: 5;
+    }
+    .menu__body.active {
+        transform: translateX(0); 
     }
     .menu__list {
         flex-direction: column;
+        gap: 32px;
+    }
+    /* .header__schedule {
+        font-size: 16px;
     } */
-
+}
+.icon-menu.open img {
+    content: url('/source/images/close-icon.svg'); /* Заміна іконки на хрестик */
 }
