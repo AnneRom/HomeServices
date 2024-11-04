@@ -43,7 +43,7 @@ button {
 }
 /* #endregion */
 
-/* Стилі за замовченням */
+/* #region  Стилі за замовченням*/
 :root {
     --Primary-Dark-Blue-1: #142257;
     --Primary-Dark-Blue-2: #1F3584;
@@ -115,7 +115,9 @@ body {
     line-height: 1.56;
 }
 
-/*Header*/
+/*#endregion*/
+
+/* #region Header*/
 .header {
     background-color: var(--Primary-Dark-Blue-1);
     position: relative; 
@@ -261,6 +263,7 @@ body {
 .menu__body.no-transition {
     transition: none !important;
 }
+/*#endregion*/
 
 .overlay {
     position: fixed;
@@ -274,9 +277,43 @@ body {
     transition: opacity 0.3s ease; /* Плавний перехід */
     z-index: 4; /* Менше, ніж у меню та хедера */
 }
-
 /* Коли меню відкрите */
 .overlay.active {
     opacity: 1;
     visibility: visible;
+}
+
+.page {
+}
+.main {
+    background-color: var(--Primary-Dark-Blue-1);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 0 15px 60px 15px;
+    min-height: 100vh;
+}
+.main__image {
+    overflow: hidden;
+}
+.main__image img {
+    border-radius: 24px;
+    object-position: top;
+}
+.main__body {
+}
+.main__content {
+}
+.main__block-title {
+}
+.block-title {
+}
+.block-title-center {
+}
+.block-title__title {
+}
+.block-title__title-big {
+}
+.block-title__title-white {
+}
+.main_advantages {
 }
