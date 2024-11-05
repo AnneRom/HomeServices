@@ -293,27 +293,81 @@ body {
     min-height: 100vh;
 }
 .main__image {
+    width: clamp(200px, 25vw, 412px);
     overflow: hidden;
 }
 .main__image img {
+    width: 100%;
     border-radius: 24px;
+    object-fit: cover;
     object-position: top;
 }
 .main__body {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .main__content {
+    display: flex;
+    flex: 1 1 auto;
+    /*
+    flex-grow: 1; - коеф збільшення(чим більший коеф, тим більший блок)
+    flex-shrink: 1; - коеф зменшення-стиснення (чим більший коеф, тим меньший блок)
+    flex-basis: auto; - визначає початкову довжину гнучкого елемента*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+.main-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 52px;
+}
+.main-list__item {
+    color: var(--Neutural-Grey-3);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    position: relative;
+}
+/* :not(:last-child) */
+.main-list__item:not(:last-child)::after {
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--Neutural-Grey-3);
+}
+
 .main__block-title {
 }
 .block-title {
+    max-width: 670px;
 }
-.block-title-center {
+
+.main-listDone {
 }
-.block-title__title {
+.done__item {
 }
-.block-title__title-big {
+
+.main__button {
 }
-.block-title__title-white {
+.call-button {
 }
+.call-button__icon {
+}
+
 .main_advantages {
+}
+.advantages-main__item {
+}
+.advantages-main__icon {
+}
+.advantages-main__text {
 }
