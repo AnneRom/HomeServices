@@ -294,25 +294,31 @@ body {
     padding: 0 15px 60px 15px;
     min-height: calc(100vh - 80px);
     position: relative;
+    /* overflow: hidden; */
 }
 .main::before, .main::after {
     content: "";
     position: absolute;
     bottom: 0;
-    background-color: var(--Neutural-White);
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 45px;
-    /* width: 481.5px; */
-    width: 26vw;
+    width: 25vw;
     transition: height 0.3s;
 }
 .main::before {
     left: 0;
-    clip-path: polygon(0 100%, 0 0, 85% 0, 100% 100%);
+    background-image: url(/source/images/left-decor.svg);
+    background-position: left;
+    /* clip-path: polygon(0 100%, 0 0, 85% 0, 100% 100%); */
 }
 .main::after {
     right: 0;
-    clip-path: polygon(0 100%, 15% 0, 100% 0, 100% 100%);
+    background-image: url(/source/images/right-decor.svg);
+    background-position: right;
+    /* clip-path: polygon(0 100%, 15% 0, 100% 0, 100% 100%); */
 }
+ 
 .main__image {
     /* width: clamp(100px, 25vw, 412px); */
     /* width: 21.458333%;  */
@@ -400,6 +406,7 @@ body {
     width: 24px;
     height: 24px;
     background-image: url(/source/images/icons/icon5.svg);
+    background-size: cover;
 }
 
 .main__button {
@@ -495,6 +502,46 @@ body {
         width: 22vw;
         height: 30px;
     }
+    .main-list {
+        column-gap: 34px;
+    }
+    .main-list__item {
+        /* font-size: clamp(14px, 25vw, 18px); */
+        font-size: 14px;
+    }
+    .main-list__item:not(:last-child)::after {
+        right: -18.5px;
+        width: 3px;
+        height: 3px;
+    }
+    .block-title__title {
+        font-size: 32px;
+    }
+    .done__item {
+        font-size: 14px;
+        padding-left: 24px;
+    }
+    .done__item::before {
+        width: 16px;
+        height: 16px;
+    }
+    .main__button {
+        min-height: 48px;
+        font-size: 18px;
+        margin: 0;
+    }
+    .call-button__icon {
+        padding: 8px;
+    }
+    .main_advantages {
+        font-size: 14px;
+    }
+    .advantages-main__item{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
 }
 
 @media (max-width: 767.98px) {
