@@ -303,27 +303,33 @@ body {
     min-width: 330px;
     min-height: 31px;
     aspect-ratio: 479 / 45;
-    /* transition: transform 0.5s; */
-    border: 2px dashed red;
+    transition: transform 0.5s;
 }
 .main-decor__item svg {
     width: 100%;
     height: 100%;
     display: block;
 }
-.main-decor__item:first-child {
+.decor-left {
     left: 0;
 }
-.main-decor__item:last-child {
+.decor-right {
     right: 0;
 }
 @media (max-width: 1335px) {
-    .main-decor__item:first-child {
+    .decor-left {
         transform: translateX(-50%); 
-        background-color: red;
     }
-    .main-decor__item:last-child {
+    .decor-right {
         transform: translateX(50%);  
+    }
+}
+@media (max-width: 479.98px) {
+    .decor-left {
+        transform: translateX(-80%); 
+    }
+    .decor-right {
+        transform: translateX(80%);  
     }
 }
 
@@ -374,7 +380,7 @@ body {
     position: relative;
 }
 /* :not(:last-child) */
-.main-list__item:not(:last-child)::after {
+.main-list__item:not(:nth-child(3n))::after {
     position: absolute;
     right: -30px;
     top: 50%;
@@ -433,8 +439,9 @@ body {
     line-height: 1.33
 }
 .call-button:hover{
-    box-shadow: 2px 15px 15px #03101e, -2px -15px 15px #03101e;
-    border-radius: 25px;
+    box-shadow: 0 3px 3px var(--Neutural-White), 
+                0 -3px 3px var(--Neutural-White);
+    /* border-radius: 25px; */
 }
 .call-button span {
     padding: 0 16px;
@@ -465,6 +472,7 @@ body {
     gap: 16px;
     /* max-width: 190px; */
     position: relative;
+    text-align: center;
 }
 /*:nth-child(4n) - n-ий дочірній елмент, де в дужках вказано чому дорівнює n (4)*/
 /*:last-child останній дочірній елмент*/ 
@@ -502,7 +510,6 @@ body {
         content: none;
     }
 }
-
 @media (max-width: 991.98px) {
     .main {
         grid-template-columns: auto;
@@ -510,21 +517,48 @@ body {
     .main__image {
         display: none;
     }
-    .main::before, .main::after {
-        width: 22vw;
-        height: 30px;
-    }
     .main-list {
         column-gap: 34px;
     }
     .main-list__item {
         /* font-size: clamp(14px, 25vw, 18px); */
-        font-size: 14px;
+        font-size: 18px;
     }
-    .main-list__item:not(:last-child)::after {
+    .main-list__item:not(:nth-child(3n))::after {
         right: -18.5px;
         width: 3px;
         height: 3px;
+    }
+    .block-title__title {
+        font-size: 56px;
+    }
+    .done__item {
+        font-size: 18px;
+        padding-left: 26px;
+    }
+    .done__item::before {
+        width: 18px;
+        height: 18px;
+    }
+    .main__button {
+        min-height: 48px;
+        font-size: 18px;
+        margin: 0;
+    }
+    .call-button__icon {
+        padding: 8px;
+    }
+    .main_advantages {
+        font-size: 18px;
+        row-gap: 24px;
+    }
+}
+@media (max-width: 479.98px) {
+    .main-list {
+        justify-content: flex-start;
+    }
+    .main-list__item {
+        font-size: 14px;
     }
     .block-title__title {
         font-size: 32px;
@@ -537,25 +571,34 @@ body {
         width: 16px;
         height: 16px;
     }
-    .main__button {
-        min-height: 48px;
-        font-size: 18px;
-        margin: 0;
-    }
-    .call-button__icon {
-        padding: 8px;
-    }
     .main_advantages {
         font-size: 14px;
+        column-gap: 24px;
+        /* padding: 0 30px; */
+        position: relative;
+    }
+    .main_advantages::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        background: linear-gradient(180deg, rgba(79,102,183,0) 0%, rgba(79,102,183,1) 48%, rgba(79,102,183,0) 100%);
     }
     .advantages-main__item{
         flex-direction: column;
         justify-content: center;
-        text-align: center;
     }
-
+    .advantages-main__item:nth-child(1n)::after {
+        content: none;
+    }
 }
-
+@media (max-width: 384px) {
+    .main-list__item:nth-child(2n)::after {
+        display: none;
+    }
+}
 @media (max-width: 767.98px) {
     .main {
         min-height: calc(100vh - 56px);
