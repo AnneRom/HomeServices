@@ -5,17 +5,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuToggle.addEventListener('click', () => {
         menuBody.classList.toggle('active');
-        menuToggle.classList.toggle('open'); // змінюємо клас іконки для заміни на хрестик
+        menuToggle.classList.toggle('open');
         overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+        menuBody.classList.remove('active');
+        menuToggle.classList.remove('open'); 
+        overlay.classList.remove('active');
     });
 
     window.addEventListener ('resize', () => {
         if (window.innerWidth > 767.98) {
             menuBody.classList.remove('active');
             menuToggle.classList.remove('open');
+            overlay.classList.remove('active');
             menuBody.classList.add("no-transition");
         } else {
             menuBody.classList.remove("no-transition");
         }
     })
+
+    let lastScrollTop = 0;
+    const header = document.querySelector('.header');
+    
+    window.addEventListener ('scroll', () => {
+        let scrollTop = window.scrollY || document.documentElement.scrollTop;
+        if ((scrollTop > lastScrollTop) && (scrollTop > header.offsetHeight)) {
+            header.classList.add('hidden');
+            header.classList.add('dark');
+        } else if (scrollTop < lastScrollTop) {
+            header.classList.remove('hidden');
+        } 
+        if (scrollTop < header.offsetHeight) {
+            header.classList.remove('dark');
+        }
+        
+        lastScrollTop = scrollTop;
+});
 });
