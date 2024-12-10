@@ -706,21 +706,81 @@ body {
     color: var(--Neutural-White);
     font-weight: 400;
     line-height: 1.56; 
-    max-width: 450px;
+}
+@media (min-width: 1280px) { /*медіазапит спрацьовує, коли розмір екрану БІЛЬШЕ ніж 1280px*/
+    .services__info {
+        max-width: 450px;
+    }
 }
 .services__info a {
     font-size: 20px;
     font-weight: 600;
     text-decoration: underline;
+    white-space: nowrap;
 }
 .services__image {
     max-width: 100%;
     text-align: center;
 }
+.services__image img {
+    max-width: 100%;
+    height: auto;
+}
 @media (max-width: 1280px) {
+    .services {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
     .services__container {
         grid-template-columns: auto;
+    }
+    .services__image {
+        order: -1;
+    }
+    .services__body {
+        padding-top: 50px;
+    }   
+}
+@media (max-width: 991.98px) {
+    .services__items {
+        grid-template-columns: auto;
+    }
+    .srvices__item {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.56;
+    }
+    .srvices__item::before {
+        top: 5px;
+    }
+    .services-header:not(:last-child), .services__items{
+        margin-bottom: 48px;
+    }
+    .block-header__title:not(:last-child) {
+        margin-bottom: 18px;
+    }
+    .services__items {
+        gap: 28px;
+    }
+
+}
+@media (max-width: 767.98px) {
+    .services__body {
+        padding-top: 30px;
+    } 
+    .services-header:not(:last-child), .services__items{
+        margin-bottom: 32px;
+    }
+    .block-header__title:not(:last-child) {
+        margin-bottom: 12px;
+    }
+    .services__items {
+        gap: 24px;
     }
 }
 
 /* #endregion */
+
+/* #region Features */
+
+/* #endregion*/
