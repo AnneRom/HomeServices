@@ -141,13 +141,9 @@ body {
     background-color: var(--Neutural-White);
     color: var(--Primary-Sky-Blue);
 }
-.call-button-blue:hover{
+.call-button:hover{
     box-shadow: 0 3px 3px var(--Neutural-White), 
                 0 -3px 3px var(--Neutural-White);
-}
-.call-button-white:hover{
-    box-shadow: 0 3px 3px var(--Primary-Sky-Blue), 
-                0 -3px 3px var(--Primary-Sky-Blue);
 }
 .call-button span {
     padding: 0 16px;
@@ -467,8 +463,6 @@ body {
 }
 
 .main__block-title {
-}
-.block-title {
     max-width: 670px;
 }
 
@@ -686,7 +680,7 @@ body {
 .services-header:not(:last-child){
     margin-bottom: 56px;
 }
-.block-header__title:not(:last-child) {
+.services-header .block-header__title:not(:last-child) {
     margin-bottom: 24px;
 }
 .block-header__text {
@@ -746,7 +740,7 @@ body {
 @media (max-width: 1280px) {
     .services {
         padding-top: 50px;
-        padding-bottom: 50px;
+        padding-bottom: 32px;
     }
     .services__container {
         grid-template-columns: auto;
@@ -815,10 +809,17 @@ body {
 
 .features__items {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 .features__item {
     padding: 32px;
+}
+.features__item-blue {
+    background-color: var(--Primary-Sky-Blue);
+    border-radius: 24px;
+    text-align: center;
+    color: var(--Neutural-White);
+   
 }
 
 .item-features__icon {
@@ -827,7 +828,7 @@ body {
     padding: 12px;
     background-color: var(--Primary-Dark-Blue-1);
     border-radius: 20px;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
 }
@@ -839,8 +840,26 @@ body {
 }
 
 .item-features__title {
+    color: var(--Neutural-Black, #171921);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.33;
 }
+.features__item-blue .item-features__title {
+    color: var(--Neutural-White);
+}
+.item-features__title:not(:last-child) {
+    margin-bottom: 12px;
+}
+.features__item-blue .item-features__title:not(:last-child) {
+    margin-bottom: 0;
+}
+
 .item-features__text {
+    line-height: 1.56;
+}
+.item-features__text:not(:last-child) {
+    margin-bottom: 32px;
 }
 @media (max-width: 991.98px) {
     .features {
@@ -849,8 +868,14 @@ body {
     .features-header:not(:last-child) {
         margin-bottom: 45px;
     }
+    .features__items {
+        gap: 32px;
+    }
     .features__item {
         padding: 15px;
+    }
+    .features__item-blue {
+        padding: 32px;
     }
 }
 @media (max-width: 767.98px) {
@@ -862,6 +887,91 @@ body {
     }
     .features__item {
         padding: 0;
+        text-align: center;
+    }
+    .features__item-blue {
+        padding: 32px;
+    }
+}
+/* #endregion*/
+
+/* #region Advantages*/
+.advantages {
+    padding: 26px 60px;
+    transition: all 0.3s;
+}
+.advantages__body {
+    background-color: var(--Primary-Dark-Blue-1);
+    border-radius: 24px;
+    padding: 64px 60px;
+    transition: all 0.3s;
+}
+.advantages__container {
+}
+
+.advantages-header {
+    position: relative;
+}
+.advantages-header:not(:last-child) {
+    margin-bottom: 120px;
+}
+.advantages-header::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(79,102,183,0) 0%, rgba(79,102,183,1) 48%, rgba(79,102,183,0) 100%);
+    left: 0;
+    bottom: -60px;
+}
+
+.advantages__items {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.advantages__item {
+}
+.item-advantages {
+}
+
+.item-advantages__icon {
+}
+
+.item-advantages__body {
+}
+.item-advantages__title {
+}
+.item-advantages__text {
+}
+
+@media (max-width: 991.98px) {
+    .advantages {
+        padding: 22px 32px;
+    }
+    .advantages__body {
+        padding: 48px 48px;
+    }
+    .advantages-header:not(:last-child) {
+        margin-bottom: 76px;
+    }
+    .advantages-header::after {
+        bottom: -38px;
+    }
+    
+}
+@media (max-width: 767.98px) {
+    .advantages {
+        padding: 20px 24px;
+    }
+    .advantages__body {
+        padding: 32px 32px;
+    }
+    .advantages-header:not(:last-child) {
+        margin-bottom: 52px;
+    }
+    .advantages-header::after {
+        display: none;
     }
 }
 /* #endregion*/
