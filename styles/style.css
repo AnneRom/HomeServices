@@ -1186,6 +1186,129 @@ body {
 /* #endregion*/
 
 /* #region Reviews*/
+.reviews {
+    padding: 132px 0;
+}
+.reviews__container {
+    max-width: 1130px;
 
+}
+.reviews-header {
+    max-width: 650px;
+    margin: 0 auto;
+}
+.reviews-header:not(:last-child) {
+    margin-bottom: 90px;
+}
+
+.reviews__body {
+    position: relative;
+}
+
+.reviews__slider {
+}
+.reviews__wrapper {
+}
+.reviews__slide {
+}
+.slide-reviews {
+    text-align: center;
+}
+
+.slide-reviews__logo {
+    position: relative;
+    padding-bottom: 24px;  
+}
+.slide-reviews__logo:not(:last-child){
+    margin-bottom: 40px;
+}
+.slide-reviews__logo::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient( 90deg, rgba(79, 102, 183, 0) 0%, rgba(227, 230, 240, 1) 48%, rgba(79, 102, 183, 0) 100%);
+}
+
+.slide-reviews__text {
+    max-width: 730px;
+    display: inline-block;
+}
+.slide-reviews__text:not(:last-child){
+    margin-bottom: 40px;
+}
+
+.slide-reviews__user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+
+}
+.slide-reviews__avatar {
+    flex: 0 0 76px;
+    height: 76px;
+    border-radius: 50%;
+}
+.slide-reviews__avatar img {
+    max-width: 100%;
+}
+/*Зробили стиді для секції reviews, поки без свайперу.*/
+.slide-reviews__body {
+    text-align: left;
+}
+.slide-reviews__name:not(:last-child) {
+    margin-bottom: 8px;
+}
+.slide-reviews__rating {
+}
+
+.reviews__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--Primary-Sky-Blue) url(/source/images/icons/slide-arrow-Left.svg) center no-repeat;
+}
+.reviews__arrow-left {
+    left: 0;
+}
+.reviews__arrow-right {
+    right: 0;
+    transform: translateY(-50%) rotate(-180deg);
+}
+.reviews__bullets {
+}
+
+@media (max-width: 991.98px) {
+    .reviews {
+        padding: 64px 0;
+    }
+    .reviews-header:not(:last-child) {
+        margin-bottom: 64px;
+    }
+    .slide-reviews__logo:not(:last-child){
+        margin-bottom: 32px;
+    }
+    
+}
+@media (max-width: 767.98px) {
+    .reviews {
+        padding: 32px 0;
+    }
+    .reviews-header:not(:last-child) {
+        margin-bottom: 32px;
+    }
+    .slide-reviews__logo:not(:last-child){
+        margin-bottom: 24px;
+    }
+}
+@media (max-width: 479.98px) {
+    
+}
 /* #endregion*/
 
