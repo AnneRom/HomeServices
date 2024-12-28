@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Services</title>
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/style.css"/>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"> -->
   </head>
   <body>
     <header class="header">
@@ -454,36 +455,97 @@
                     Here our original reviews from trusted platform
                 </h2>
             </div>
-            <div class="reviews__body">
             <div class="reviews__slider swiper">
                 <div class="reviews__wrapper swiper-wraper">
                     <div class="reviews__slide slide-reviews swiper-slide">
                         <div class="slide-reviews__logo">
                             <img src="/source/images/reviews/Reviews-Logo.jpg" alt="Reviews-Logo">
                         </div>
-
-                    <div class="slide-reviews__text">
-                        <p>Roof repairs can be a real headache, but HomePro makes it easy! Their roofing team turned my leaky roof into a stockade. With their craftsmanship and the best materials, my house is now ready to weather any storm.</p>
-                    </div>
-                    <div class="slide-reviews__user">
-                        <div class="slide-reviews__avatar">
-                            <img src="/source/images/reviews/User-avatar.jpg" alt="User-avatar">
+                        <div class="slide-reviews__text">
+                            <p>Roof repairs can be a real headache, but HomePro makes it easy! Their roofing team turned my leaky roof into a stockade. With their craftsmanship and the best materials, my house is now ready to weather any storm.</p>
                         </div>
-                        <div class="slide-reviews__body">
-                            <div class="slide-reviews__name">Kende Attila</div>
-                            <div class="slide-reviews__rating">* * * * *</div>
+                        <div class="slide-reviews__user">
+                            <div class="slide-reviews__avatar">
+                                <img src="/source/images/reviews/User-avatar.jpg" alt="User-avatar">
+                            </div>
+                            <div class="slide-reviews__body">
+                                <div class="slide-reviews__name">Kende Attila</div>
+                                <div class="slide-reviews__rating">* * * * *</div>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
-            </div>
-            <button class="reviews__arrow reviews__arrow-left" type="button"></button>
-            <button class="reviews__arrow reviews__arrow-right" type="button"></button>
-            <div class="reviews__bullets"></div>
+                <button class="reviews__arrow reviews__arrow-left swiper-button-prev" type="button"></button>
+                <button class="reviews__arrow reviews__arrow-right swiper-button-next" type="button"></button>
+                <div class="reviews__bullets swiper-pagination"></div>
             </div>
         </div>
     </section>
+    <section class="insights">
+        <div class="insights__container">
+            <div class="insights-header block-title-center">
+                <h2 class="block-header__title block-title__title">Explore Insights in Our Blog</h2>
+                <div class="block-header__text block-title__text">
+                  <p>
+                    Find lots of insights and information on our blog. Explore, learn, and get inspired today.
+                  </p>
+                </div>
+            </div>
+            <div class="insights__info">
+                <article class="info__item item-info">
+                    <div class="item-info__image">
+                        <img src="/source/images/insights/Thumbnail.jpg" alt="">
+                    </div>
+                    <div class="item-info__text">
+                        <p>19 Jan 2023</p>
+                        <h3 class="info-text__title">Understanding Smart Home Systems & Maintenance</h3>
+                        <p>Discover the ultimate guide to troubleshooting common smart home issues in our latest blog post. From connectivity problems to device malfunctions, we provide step-by-step solutions to help you restore the seamless functionality of your smart home system. Gain expert insights, practical tips, and insider advice to keep your home automation running smoothly. Don't let technical glitches hinder your smart home experience - empower yourself with the knowledge to resolve issues and enjoy the convenience of your connected home. Visit our blog now and become a troubleshooting pro!</p>
+                    </div>
+                    <div class="item-info__tags">
+                        <div class="item-info__tag">Plumbing</div>
+                        <div class="item-info__tag">Architecture</div>
+                        <div class="item-info__tag">Maintenance</div>
+                    </div>
+                </article>
+                <article class="info__item item-info">
+                    <div class="item-info__image">
+                        <img src="/source/images/insights/Thumbnail2.jpg" alt="">
+                    </div>
+                    <div class="item-info__text">
+                        <p>19 Jan 2023</p>
+                        <h3 class="info-text__title">The Ultimate Guide to Home Repairs and Renovations</h3>
+                        <p>Discover the ultimate guide to troubleshooting common smart home issues in our latest blog post. From connectivity problems to device malfunctions, we provide step-by-step solutions to help you restore the seamless functionality of your smart home system. Gain expert insights, practical tips, and insider advice to keep your home automation running smoothly. Don't let technical glitches hinder your smart home experience - empower yourself with the knowledge to resolve issues and enjoy the convenience of your connected home. Visit our blog now and become a troubleshooting pro!</p>
+                    </div>
+                    <div class="item-info__tags">
+                        <div class="item-info__tag">Plumbing</div>
+                        <div class="item-info__tag">Architecture</div>
+                        <div class="item-info__tag">Maintenance</div>
+                    </div>
+                </article>
+                <article class="info__item item-info">
+                    <div class="item-info__image">
+                        <img src="/source/images/insights/Thumbnail3.jpg" alt="">
+                    </div>
+                    <div class="item-info__text">
+                        <p>19 Jan 2023</p>
+                        <h3 class="info-text__title">Painting Techniques for a Kitchen Refresh</h3>
+                        <p>Discover the ultimate guide to troubleshooting common smart home issues in our latest blog post. From connectivity problems to device malfunctions, we provide step-by-step solutions to help you restore the seamless functionality of your smart home system. Gain expert insights, practical tips, and insider advice to keep your home automation running smoothly. Don't let technical glitches hinder your smart home experience - empower yourself with the knowledge to resolve issues and enjoy the convenience of your connected home. Visit our blog now and become a troubleshooting pro!</p>
+                    </div>
+                    <div class="item-info__tags">
+                        <div class="item-info__tag">Plumbing</div>
+                        <div class="item-info__tag">Architecture</div>
+                        <div class="item-info__tag">Maintenance</div>
+                    </div>
+                </article>
+            </div>
+            <div class="insights__more">
+                <h3 class="more__title">View More</h3>
+            </div>
 
+
+        </div>
+    </section>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
     <script src="script.js"></script>
   </body>
 </html>

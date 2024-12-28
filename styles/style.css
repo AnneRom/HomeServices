@@ -1202,10 +1202,11 @@ body {
 }
 
 .reviews__body {
-    position: relative;
+    /* position: relative; */
 }
 
 .reviews__slider {
+    position: relative;
 }
 .reviews__wrapper {
 }
@@ -1235,6 +1236,8 @@ body {
 .slide-reviews__text {
     max-width: 730px;
     display: inline-block;
+    font-size: 20px;
+    line-height: 1.6;
 }
 .slide-reviews__text:not(:last-child){
     margin-bottom: 40px;
@@ -1258,6 +1261,12 @@ body {
 /*Зробили стиді для секції reviews, поки без свайперу.*/
 .slide-reviews__body {
     text-align: left;
+}
+.slide-reviews__name {
+    color: var(--Neutural-Black);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.33;
 }
 .slide-reviews__name:not(:last-child) {
     margin-bottom: 8px;
@@ -1305,6 +1314,10 @@ body {
     }
     .slide-reviews__logo:not(:last-child){
         margin-bottom: 24px;
+    }
+    .slide-reviews__text {
+        font-size: 18px;
+        line-height: 1.56;
     }
 }
 @media (max-width: 479.98px) {
