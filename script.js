@@ -41,18 +41,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });  
 });
 
-// document.addEventListener('DOMContentLoaded', () => {
-// const swiper = new Swiper('.reviews__slider', {
-//     slidesPerView: 1, 
-//     spaceBetween: 20,
-//     navigation: {
-//         nextEl: '.swiper-button-next',
-//         prevEl: '.swiper-button-prev',
-//     },
-//     pagination: {
-//         el: 'swiper-pagination',
-//         clickable: true,
-//     },
-//     loop: true,
-// });
-// });
+document.addEventListener('DOMContentLoaded', () => {
+const swiper = new Swiper('.reviews__slider', {
+    slidesPerView: 1, 
+    spaceBetween: 20,
+    navigation: {
+        nextEl: '.reviews__arrow-right',
+        prevEl: '.reviews__arrow-left',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    loop: true,
+});
+});
