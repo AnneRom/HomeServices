@@ -1357,7 +1357,7 @@ body {
 
 .insights__info {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 48px;
 }
 .info__item {
@@ -1387,6 +1387,11 @@ body {
 .item-info__text-par {
     max-height: 84px;
     overflow: hidden;
+    transition: overflow ease 0.5s;
+}
+.item-info__text-par.view-more {
+    max-height: none;
+    overflow: visible;
 }
 .item-info__tags {
     display: flex;
@@ -1402,7 +1407,58 @@ body {
     background-color: #F3F5F9;
 }
 .insights__more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--Primary-Sky-Blue);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.33; 
+    padding-right: 24px;
+    padding-bottom: 6px;
+    background: url(/source/images/insights/view-more.svg) right no-repeat;
+    
+}
+.insights__more:hover {
+    text-decoration: underline;
 }
 .more__title {
+}
+@media (max-width: 991.98px) {
+    .info-text__title {
+        font-size: 28px;
+        line-height: 1.33; 
+    }
+    
+}
+@media (max-width: 767.98px) {
+    .insights {
+        padding: 60px 0;
+    }
+    .info-text__title {
+        font-size: 24px;
+    }
+    .insights__container, .insights__info {
+        gap: 32px;
+    }
+    .info__item {
+        gap: 16px;
+    }
+    .item-info__text {
+        gap: 12px;
+    }
+}
+/*Адаптували секцію .insights, додали логіку до кнопки .insights__more*/
+@media (max-width: 479.98px) {
+    .insights {
+        padding: 48px 0;
+    }
+    .insights__info {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .info-text__title {
+        font-size: 20px;
+        line-height: 1.4; 
+    }   
 }
 /* #endregion*/

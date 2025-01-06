@@ -56,3 +56,18 @@ const swiper = new Swiper('.reviews__slider', {
     loop: true,
 });
 });
+
+const view = document.querySelector('.insights__more');
+const textMore = document.querySelectorAll('.item-info__text-par');
+console.log(view);
+console.log(textMore);
+
+view.addEventListener('click', function() {
+    textMore.forEach(text => {
+        text.classList.toggle('view-more');
+    });
+    
+    console.log(this.textContent);
+    this.textContent = this.textContent === 'View More' ? 'View Less' : 'View More';
+    console.log(this.textContent);
+});
