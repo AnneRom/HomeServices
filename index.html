@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Services</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <link rel="stylesheet" href="styles/style.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"> -->
   </head>
   <body>
     <header class="header">
@@ -557,12 +558,80 @@
             </div>
             <div class="insights__more">
                 <h3 class="more__title">View More</h3>
+                <img src="/source/images/insights/view-more.svg" alt="Arrow" class="more__image">
             </div>
 
 
         </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <section class="splide" aria-labelledby="carousel-heading">
+        <div class="reviews__container">
+        <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev">
+            </button>
+            <button class="splide__arrow splide__arrow--next">
+            </button>
+       </div>
+        <div class="splide__track">
+              <ul class="splide__list">
+                  <li class="splide__slide">
+                    <div class="slide-reviews__logo">
+                        <img src="/source/images/reviews/Reviews-Logo.jpg" alt="Reviews-Logo">
+                    </div>
+                    <div class="slide-reviews__text">
+                        <p>Roof repairs can be a real headache, but HomePro makes it easy! Their roofing team turned my leaky roof into a stockade. With their craftsmanship and the best materials, my house is now ready to weather any storm.</p>
+                    </div>
+                    <div class="slide-reviews__user">
+                        <div class="slide-reviews__avatar">
+                            <img src="/source/images/reviews/User-avatar.jpg" alt="User-avatar">
+                        </div>
+                        <div class="slide-reviews__body">
+                            <div class="slide-reviews__name">Kende Attila</div>
+                            <div class="slide-reviews__rating">* * * * *</div>
+                        </div>
+                    </div>
+                  </li>
+                  <li class="splide__slide">
+                    <div class="slide-reviews__logo">
+                        <img src="/source/images/reviews/Reviews-Logo.jpg" alt="Reviews-Logo">
+                    </div>
+                    <div class="slide-reviews__text">
+                        <p>Roof repairs can be a real headache, but HomePro makes it easy! Their roofing team turned my leaky roof into a stockade. With their craftsmanship and the best materials, my house is now ready to weather any storm.</p>
+                    </div>
+                    <div class="slide-reviews__user">
+                        <div class="slide-reviews__avatar">
+                            <img src="/source/images/reviews/User-avatar.jpg" alt="User-avatar">
+                        </div>
+                        <div class="slide-reviews__body">
+                            <div class="slide-reviews__name">Kende Attila</div>
+                            <div class="slide-reviews__rating">* * * * *</div>
+                        </div>
+                    </div>
+                  </li>
+                  <li class="splide__slide">
+                    <div class="slide-reviews__logo">
+                        <img src="/source/images/reviews/Reviews-Logo.jpg" alt="Reviews-Logo">
+                    </div>
+                    <div class="slide-reviews__text">
+                        <p>Roof repairs can be a real headache, but HomePro makes it easy! Their roofing team turned my leaky roof into a stockade. With their craftsmanship and the best materials, my house is now ready to weather any storm.</p>
+                    </div>
+                    <div class="slide-reviews__user">
+                        <div class="slide-reviews__avatar">
+                            <img src="/source/images/reviews/User-avatar.jpg" alt="User-avatar">
+                        </div>
+                        <div class="slide-reviews__body">
+                            <div class="slide-reviews__name">Kende Attila</div>
+                            <div class="slide-reviews__rating">* * * * *</div>
+                        </div>
+                    </div>
+                  </li>
+              </ul>
+        </div>
+        <div class="splide-pagination"></div>
+      </div>
+      </section>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
     <script src="script.js"></script>
   </body>
 </html>

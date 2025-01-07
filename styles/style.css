@@ -1191,7 +1191,7 @@ body {
 }
 .reviews__container {
     max-width: 1130px;
-
+    position: relative;
 }
 .reviews-header {
     max-width: 650px;
@@ -1363,6 +1363,7 @@ body {
 .info__item {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     gap: 24px;
 }
 .item-info {
@@ -1387,15 +1388,19 @@ body {
 .item-info__text-par {
     max-height: 84px;
     overflow: hidden;
-    transition: overflow ease 0.5s;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7; 
 }
 .item-info__text-par.view-more {
-    max-height: none;
     overflow: visible;
+    max-height: 500px; 
+    opacity: 1;
 }
 .item-info__tags {
     display: flex;
     gap: 12px;
+    margin-top: auto;
+    flex-wrap: wrap;
 }
 .item-info__tag {
     font-size: 14px;
@@ -1414,10 +1419,14 @@ body {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.33; 
-    padding-right: 24px;
-    padding-bottom: 6px;
-    background: url(/source/images/insights/view-more.svg) right no-repeat;
-    
+}
+.more__image {
+    width: 24px;
+    height: 24px;
+    margin-top: 6px;
+}
+.more__image.less {
+    transform: scaleX(-1);
 }
 .insights__more:hover {
     text-decoration: underline;
@@ -1448,7 +1457,7 @@ body {
         gap: 12px;
     }
 }
-/*Адаптували секцію .insights, додали логіку до кнопки .insights__more*/
+
 @media (max-width: 479.98px) {
     .insights {
         padding: 48px 0;
@@ -1462,3 +1471,75 @@ body {
     }   
 }
 /* #endregion*/
+
+.splide__slide {
+    min-height: 500px;
+    background-color: var(--Neutural-White);
+    text-align: center;
+}
+/* Стилізація активних кнопок */
+.splide__arrow {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px ;
+    border-radius: 50%;
+    background: var(--Primary-Sky-Blue) url(/source/images/icons/slide-arrow-Left.svg) center no-repeat;
+    cursor: pointer;
+    opacity: 1;
+    transition: background-color 0.3s ease;
+}
+.splide__arrow--prev {
+    left: 0;
+}
+.splide__arrow--next {
+    right: 0;
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+/* Стилізація неактивних кнопок */
+
+.splide__arrow:disabled {
+    background-color: #E3E6F0; /* Сірий */
+    cursor: not-allowed;
+    opacity: 1;
+    pointer-events: none; /* Вимикаємо всі події, включно з hover */
+}
+
+/* Додавання ховера тільки для активних кнопок */
+.splide__arrow:not(:disabled):hover {
+    background-color: var(--Primary-Dark-Blue-2); /* Темно-синій */
+}
+
+.splide-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    position: relative;
+  }
+  
+  .splide-pagination__button {
+    width: 10px;
+    height: 10px;
+    background-color: var(--Neutural-Light-Gray);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.4s ease;
+  }
+  
+  .splide-pagination__button.is-active {
+    background-color: var(--Primary-Sky-Blue);
+  }
+  
+  .splide-pagination__button.is-merging {
+    width: 30px;
+    height: 10px;
+    background-color: var(--Primary-Sky-Blue);
+    border-radius: 20px;
+  }
+  
