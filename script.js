@@ -81,52 +81,45 @@ view.addEventListener('click', function() {
     }
 });
 
-const splide = new Splide ('.splide', {
-    perPage: 1,
-    gap: '30px',
-    pagination: false,
-});
-splide.mount();
+const cards = document.querySelectorAll('.item-info__tags');
+console.log(cards);
 
-// Контейнер для пагінації
-const paginationContainer = document.querySelector('.splide-pagination');
-
-// Перевірка, чи контейнер існує
-if (paginationContainer) {
-  // Отримати кількість слайдів
-  const slideCount = splide.length;
-
-  // Створити кнопки для кожного слайду
-  for (let i = 0; i < slideCount; i++) {
-    const button = document.createElement('button');
-    button.classList.add('splide-pagination__button');
-    button.setAttribute('data-slide', i); // Зберегти індекс слайду
-
-    // Додати обробник події
-    button.addEventListener('click', () => {
-      splide.go(i); // Перейти до відповідного слайду
-    });
-
-    paginationContainer.appendChild(button);
-  }
-
-  // Оновлювати активну кнопку під час зміни слайду
-  splide.on('move', (index) => {
-    const buttons = document.querySelectorAll('.splide-pagination__button');
-    buttons.forEach((btn, i) => {
-      btn.classList.remove('is-active', 'is-merging');
-
-      if (i === index) {
-        btn.classList.add('is-active');
-      }
-
-      // Додаємо клас для сусідніх кнопок
-      if (i === index - 1 || i === index + 1) {
-        btn.classList.add('is-merging');
-      }
-    });
-  });
-
-  // Позначити першу кнопку як активну на старті
-  paginationContainer.querySelector('.splide-pagination__button').classList.add('is-active');
+function toggleText (tag) {
+    if (tag.textContent === '...') {
+        tag.textContent = tag.dataset.originalText;
+    } else {
+        tag.textContent = '...';
+    }
 }
+
+function handleScreenChahge (event) {
+    cards.forEach((card) => {
+        const tags = card.querySelectorAll('.item-info__tag');
+        if (tags.length == 0) return;
+        const lastTag = tags[tags.length - 1];
+        
+        if (!lastTag.dataset.originalText) {
+            lastTag.dataset.originalText = lastTag.textContent;
+        }
+
+        if (event.matches) {
+            lastTag.textContent = '...';
+            lastTag.style.cursor = 'pointer';
+            lastTag.addEventListener('click', () => toggleText(lastTag));
+        } else {
+            lastTag.textContent = lastTag.dataset.originalText;
+            lastTag.style.cursor = 'default';
+            lastTag.replaceWith(lastTag.cloneNode(true));
+        }
+    });
+}
+
+
+//створили(ініціалізували) медіазапит
+const mediaQuery = window.matchMedia('(max-width: 415px)');
+
+//перевірка на медізапит при завантиженні сторінки -> виклик функції handleScreenChahge()
+handleScreenChahge(mediaQuery);
+
+//перевірка на медізапит при зміні розміру вікна
+mediaQuery.addEventListener('change', handleScreenChahge);
