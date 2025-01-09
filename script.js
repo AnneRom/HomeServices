@@ -1,3 +1,8 @@
+// const Splide = require('@splidejs/splide')
+// import Splide from '@splidejs/splide/css';
+
+// const { Pagination } = require("swiper/modules");
+
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menuToggle');
     const menuBody = document.getElementById('menuBody');
@@ -114,7 +119,6 @@ function handleScreenChahge (event) {
     });
 }
 
-
 //створили(ініціалізували) медіазапит
 const mediaQuery = window.matchMedia('(max-width: 415px)');
 
@@ -123,3 +127,37 @@ handleScreenChahge(mediaQuery);
 
 //перевірка на медізапит при зміні розміру вікна
 mediaQuery.addEventListener('change', handleScreenChahge);
+
+
+const splide = new Splide( '.splide', {
+    perPage: 1,
+    pagination: false,
+
+}).mount();
+
+const paginationContainer = document.querySelector('.splide-pagination');
+
+if (paginationContainer) {
+  const slideCount = splide.length;
+
+  for (let i = 0; i < slideCount; i++) {
+    const button = document.createElement('button');
+    button.classList.add('splide-pagination__button');
+    button.setAttribute('data-slide', i);
+
+    button.addEventListener('click', () => {
+      splide.go(i);
+    });
+
+    paginationContainer.appendChild(button);
+  }
+
+  splide.on('move', (index) => {
+    const buttons = document.querySelectorAll('.splide-pagination__button');
+    buttons.forEach((btn, i) => {
+      btn.classList.toggle('is-active', i === index); 
+    });
+  });
+
+  paginationContainer.querySelector('.splide-pagination__button').classList.add('is-active');
+}
