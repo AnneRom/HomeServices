@@ -330,7 +330,7 @@ body {
   }
 }
 .icon-menu.open img {
-  content: url("/source/images/close-icon.svg"); /* Заміна іконки на хрестик */
+  content: url("source/images/close-icon.svg"); /* Заміна іконки на хрестик */
 }
 .menu__body.no-transition {
   transition: none !important;
