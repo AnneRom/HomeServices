@@ -330,7 +330,7 @@ body {
   }
 }
 .icon-menu.open img {
-  content: url("source/images/close-icon.svg"); /* Заміна іконки на хрестик */
+  content: url("../source/images/close-icon.svg"); /* Заміна іконки на хрестик */
 }
 .menu__body.no-transition {
   transition: none !important;
@@ -506,7 +506,7 @@ body {
   content: "";
   width: 24px;
   height: 24px;
-  background-image: url(source/images/icons/icon5.svg);
+  background-image: url(../source/images/icons/icon5.svg);
   background-size: cover;
 }
 
@@ -738,7 +738,7 @@ body {
   content: "";
   width: 16px;
   height: 16px;
-  background-image: url(source/images/icons/icon7.svg);
+  background-image: url(../source/images/icons/icon7.svg);
   background-size: cover;
 }
 
@@ -949,7 +949,7 @@ body {
     transform: translate(0, -50%);
     height: 100%;
     width: 45px;
-    background: url(source/images/decoration-advantages.svg) center no-repeat;
+    background: url(../source/images/decoration-advantages.svg) center no-repeat;
   }
   .advantages__body::before {
     left: -15px;
@@ -1277,12 +1277,12 @@ body {
   width: 26px;
   height: 25px;
   display: inline-block;
-  background: url(source/images/reviews/star-gray.svg) center no-repeat;
+  background: url(../source/images/reviews/star-gray.svg) center no-repeat;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .star-input:checked ~ .star { /* ~ - означає, що вибираються тільки суміжніні алементи, ті що йдуть після input на тому ж рівні вкладеності*/
-  background: url(source/images/reviews/star-yellow.svg) center no-repeat;
+  background: url(../source/images/reviews/star-yellow.svg) center no-repeat;
 }
 
 .splide__slide {
@@ -1299,7 +1299,7 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: var(--Primary-Sky-Blue) url(source/images/icons/slide-arrow-Left.svg) center no-repeat;
+  background: var(--Primary-Sky-Blue) url(../source/images/icons/slide-arrow-Left.svg) center no-repeat;
   cursor: pointer;
   opacity: 1;
   /* transition: background-color 0.3s ease, border-radius 0.3s ease; */
