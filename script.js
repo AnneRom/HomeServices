@@ -2,6 +2,9 @@
 // import Splide from '@splidejs/splide/css';
 
 // const { Pagination } = require("swiper/modules");
+// import '@splidejs/splide/dist/css/splide.min.css';
+// import Splide from '@splidejs/splide';
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menuToggle');
@@ -45,22 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
         lastScrollTop = scrollTop;
     });  
 });
-
-// document.addEventListener('DOMContentLoaded', () => {
-// const swiper = new Swiper('.reviews__slider', {
-//     slidesPerView: 1, 
-//     spaceBetween: 20,
-//     navigation: {
-//         nextEl: '.reviews__arrow-right',
-//         prevEl: '.reviews__arrow-left',
-//     },
-//     pagination: {
-//         el: '.swiper-pagination',
-//         clickable: true,
-//     },
-//     loop: true,
-// });
-// });
 
 const view = document.querySelector('.insights__more');
 const textMore = document.querySelectorAll('.item-info__text-par');
@@ -138,10 +125,13 @@ const splide = new Splide( '.splide', {
 const paginationContainer = document.querySelector('.splide-pagination');
 
 if (paginationContainer) {
-  const slideCount = splide.length;
+  const slideCount = splide.length;//рахує скільки слайдів
 
   for (let i = 0; i < slideCount; i++) {
     const button = document.createElement('button');
+    //<div class="splide-pagination">
+    //<button class = "splide-pagination__button" data-slide = i></button>
+    //</div>
     button.classList.add('splide-pagination__button');
     button.setAttribute('data-slide', i);
 
@@ -149,7 +139,12 @@ if (paginationContainer) {
       splide.go(i);
     });
 
-    paginationContainer.appendChild(button);
+    paginationContainer.appendChild(button);//додаємо до контейнера  pagination новий дочірній елемент 
+    ////<div class="splide-pagination">
+    //<button class = "splide-pagination__button" data-slide = i></button>
+    //<button class = "splide-pagination__button" data-slide = i></button>
+    //<button class = "splide-pagination__button" data-slide = i></button>
+    //</div>
   }
 
   splide.on('move', (index) => {
@@ -161,3 +156,15 @@ if (paginationContainer) {
 
   paginationContainer.querySelector('.splide-pagination__button').classList.add('is-active');
 }
+
+const inputs = document.querySelectorAll(".star-input"); //список всіх чекбоксів
+
+console.log(inputs);
+
+inputs.forEach((input, index) => {
+    input.addEventListener('change', () => {
+        inputs.forEach((inp, idx) => {
+            inp.checked = idx <= index;
+        });
+    });
+});

@@ -1267,6 +1267,22 @@ body {
     margin-bottom: 8px;
 }
 .slide-reviews__rating {
+  display: flex;
+  gap: 10.5px;
+}
+.star-input {
+  display: none;
+}
+.star {
+  width: 26px;
+  height: 25px;
+  display: inline-block;
+  background: url(/source/images/reviews/star-gray.svg) center no-repeat;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.star-input:checked ~ .star { /* ~ - означає, що вибираються тільки суміжніні алементи, ті що йдуть після input на тому ж рівні вкладеності*/
+  background: url(/source/images/reviews/star-yellow.svg) center no-repeat;
 }
 
 .splide__slide {
@@ -1278,7 +1294,6 @@ body {
 }
 .splide__arrow {
   position: absolute;
-  z-index: 10;
   top: 50%;
   transform: translateY(-50%);
   width: 48px;
@@ -1288,14 +1303,17 @@ body {
   cursor: pointer;
   opacity: 1;
   /* transition: background-color 0.3s ease, border-radius 0.3s ease; */
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease,
+              top 0.3s ease;
 }
 .splide__arrow--prev {
   left: 0;
+  margin-left: 30px;
 }
 .splide__arrow--next {
   right: 0;
   transform: translateY(-50%) rotate(-180deg);
+  margin-right: 30px;
 }
 
 .splide__arrow:disabled {
@@ -1342,7 +1360,15 @@ body {
     .slide-reviews__logo:not(:last-child){
         margin-bottom: 32px;
     }
-    
+    .splide__arrow {
+      top: 100%;
+    }
+    .splide__arrow--prev {
+      left: 30px;
+    }
+    .splide__arrow--next {
+      right: 30px;
+    }
 }
 @media (max-width: 767.98px) {
     .reviews {
