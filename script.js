@@ -1,26 +1,22 @@
-// const Splide = require('@splidejs/splide')
-// import Splide from '@splidejs/splide/css';
-
-// const { Pagination } = require("swiper/modules");
-// import '@splidejs/splide/dist/css/splide.min.css';
-// import Splide from '@splidejs/splide';
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menuToggle');
     const menuBody = document.getElementById('menuBody');
     const overlay = document.getElementById('overlay');
+    const body = document.body; 
 
     menuToggle.addEventListener('click', () => {
         menuBody.classList.toggle('active');
         menuToggle.classList.toggle('open');
         overlay.classList.toggle('active');
+        body.classList.toggle('body-no-scroll'); 
     });
 
     overlay.addEventListener('click', () => {
         menuBody.classList.remove('active');
         menuToggle.classList.remove('open'); 
         overlay.classList.remove('active');
+        body.classList.remove('body-no-scroll');
     });
 
     window.addEventListener ('resize', () => {
@@ -29,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.classList.remove('open');
             overlay.classList.remove('active');
             menuBody.classList.add("no-transition");
+            body.classList.remove('body-no-scroll');
         } else {
             menuBody.classList.remove("no-transition");
         }
@@ -157,14 +154,17 @@ if (paginationContainer) {
   paginationContainer.querySelector('.splide-pagination__button').classList.add('is-active');
 }
 
-const inputs = document.querySelectorAll(".star-input"); //список всіх чекбоксів
+const slides = document.querySelectorAll(".splide__slide");
+ slides.forEach(slide => {
+    const inputs = slide.querySelectorAll(".star-input");
+    console.log(inputs);
 
-console.log(inputs);
-
-inputs.forEach((input, index) => {
-    input.addEventListener('change', () => {
-        inputs.forEach((inp, idx) => {
-            inp.checked = idx <= index;
+    inputs.forEach((input, index) => {
+        input.addEventListener('change', () => {// input - зберігає елемент на який натиснуто, index - зберігає номер елемента на який натиснуто
+            inputs.forEach((inp, idx) => {
+                inp.checked = idx <= index;//ця дія виконується тільки при умові, що idx <= index
+            });
         });
     });
 });
+

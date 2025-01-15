@@ -98,7 +98,7 @@ body {
 }
 /*#endregion*/
 
-/* region Модулі */
+/* #region Модулі */
 
 /*Title-module*/
 .block-title {
@@ -262,6 +262,11 @@ body {
 #mobile-schedule {
   display: none;
 }
+
+.body-no-scroll {
+  overflow: hidden;
+}
+
 @media (max-width: 767.98px) {
   #bigscreen-schedule {
     display: none;
@@ -362,11 +367,13 @@ body {
   background-color: var(--Primary-Dark-Blue-1);
   display: grid;
   grid-template-columns: auto 1fr auto;
-  padding: 0 15px 60px 15px;
-  min-height: calc(100vh - 80px);
+  padding: 80px 15px 60px 15px;
+  min-height: 100vh;
+  /* padding: 0 15px 60px 15px;
+  min-height: calc(100vh - 80px); */
   position: relative;
   overflow: hidden;
-  margin-top: 80px;
+  /* margin-top: 80px; */
 }
 .main-decor__item {
   position: absolute;
@@ -682,8 +689,9 @@ body {
 }
 @media (max-width: 767.98px) {
   .main {
-    min-height: calc(100vh - 56px);
-    margin-top: 56px;
+    /* min-height: calc(100vh - 56px);
+    margin-top: 56px; */
+    padding-top: 56px;
   }
 }
 /* #endregion*/
