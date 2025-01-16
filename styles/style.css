@@ -1539,3 +1539,89 @@ body {
 }
 /* #endregion*/
 
+/* #region Questions*/
+.questions {
+  padding: 115px 0;
+}
+.questions__container {
+  display: grid;
+  grid-template-columns: auto 43.385417%; /* 833/1920 */
+  gap: 20px;
+}
+
+.questions-header {
+  max-width: 470px;
+}
+.block-title__title:not(:last-child) {
+  margin-bottom: 24px;
+}
+.block-title__text {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.block-title__text a {
+  color: var(--Primary-Sky-Blue);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.33;
+  text-decoration: underline;
+}
+.block-title__text a:hover {
+  text-decoration: none;
+}
+
+.questions__spoillers {
+}
+.spoiller {
+  padding: 24px 32px;
+  border-radius: 12px;
+  background-color: var(--Neutural-White);
+  transition: background-color 0.5s ease;
+}
+.spoiller.open {
+  background-color: var(--Neutural-Light-Grey, #F3F5F9);
+}
+
+.spoiller__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--Neutural-Grey-1);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.33;
+  cursor: pointer;
+}
+.spoiller__title img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.spoiller__text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  padding-top: 16px;
+}
+/*Зробили розмітку нової секції .questions, додали стилі без підключення .active*/
+.spoiller__title.active img {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 991.98px) {
+  
+}
+@media (max-width: 767.98px) {
+  .questions {
+    padding: 90px 0 90px 0;
+  }
+   
+}
+@media (max-width: 479.98px) {
+  .questions {
+    padding: 32px 0 32px 0;
+  }
+}
+/* #endregion*/
