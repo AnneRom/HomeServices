@@ -1545,8 +1545,9 @@ body {
 }
 .questions__container {
   display: grid;
-  grid-template-columns: auto 43.385417%; /* 833/1920 */
-  gap: 20px;
+  grid-template-columns: auto 60%;
+  column-gap: 20px;
+  row-gap: 32px;
 }
 
 .questions-header {
@@ -1577,10 +1578,12 @@ body {
   padding: 24px 32px;
   border-radius: 12px;
   background-color: var(--Neutural-White);
+  cursor: pointer;
   transition: background-color 0.5s ease;
 }
-.spoiller.open {
+.spoiller.open:not(:last-child) {
   background-color: var(--Neutural-Light-Grey, #F3F5F9);
+  margin-bottom: 5px;
 }
 
 .spoiller__title {
@@ -1591,27 +1594,47 @@ body {
   font-size: 24px;
   font-weight: 700;
   line-height: 1.33;
-  cursor: pointer;
+}
+.spoiller__title p {
+  padding-right: 20px;
 }
 .spoiller__title img {
   width: 32px;
   height: 32px;
   transition: transform 0.3s ease;
 }
+.spoiller__title.active img {
+  transform: rotate(180deg);
+}
 
 .spoiller__text {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  padding-top: 16px;
+  padding-top: 0px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding-top 0.5s ease;
 }
-/*Зробили розмітку нової секції .questions, додали стилі без підключення .active*/
-.spoiller__title.active img {
-  transform: rotate(180deg);
+
+.spoiller__text.active {
+  max-height: 500px;
+  padding-top: 16px;
 }
 
 @media (max-width: 991.98px) {
-  
+  .questions__container {
+    grid-template-columns: auto;
+  }
+  .questions-header {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .spoiller__title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.33;
+  }
 }
 @media (max-width: 767.98px) {
   .questions {
@@ -1624,4 +1647,8 @@ body {
     padding: 32px 0 32px 0;
   }
 }
+/* #endregion*/
+
+/* #Talk*/
+
 /* #endregion*/
