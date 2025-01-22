@@ -1650,5 +1650,92 @@ body {
 /* #endregion*/
 
 /* #Talk*/
+.talk {
+  background-color: var(--Primary-Dark-Blue-1);
+  overflow: hidden;
+}
+.talk__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  position: relative;
+}
+.talk__container::before {
+  content: "";
+  position: absolute;
+  background: url(../source/images/talk-decor.svg) top left no-repeat;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 581 / 45;
+}
+.talk__content {
+  padding-top: 165px;
+  padding-bottom: 105px;
+}
 
+.talk__block-title {
+}
+.talk__block-title:not(:last-child) {
+  margin-bottom: 24px;
+}
+.talk-listDone {
+  display: flex;
+  column-gap: 40px;
+}
+.talk-listDone:not(:last-child) {
+  margin-bottom: 36px;
+}
+
+.talk__image {
+  align-self: flex-end;
+  overflow: visible;
+}
+.talk__image img {
+  width: 120%;
+  height: auto;
+  margin-left: 20%;
+}
+
+@media (max-width: 991.98px) {
+  .talk__content {
+    padding-top: 70px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  .talk__container {
+    grid-template-columns: auto;
+  }
+  .talk-listDone {
+    justify-content: center;
+  }
+  .talk__image img {
+    width: 110%;
+    height: auto;
+    margin-left: 10%;
+  }
+  .talk__container::before {
+    background: url(../source/images/talk-decor.svg) top center no-repeat;
+    left: 50%;
+    transform: translate(-50%, 0);
+    aspect-ratio: 299 / 45;
+  }
+}
+@media (max-width: 767.98px) {
+   
+}
+@media (max-width: 479.98px) {
+  .talk__content {
+    padding-top: 56px;
+  }
+  .talk-listDone:not(:last-child) {
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 397.98px) {
+  .talk-listDone {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
 /* #endregion*/
