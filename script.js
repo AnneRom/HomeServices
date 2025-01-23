@@ -184,3 +184,18 @@ spoillers.forEach(spoiller => {
 
 // .parentElement - пошук батьківського елемента
 // .nextSiplingElement - пошук наступного елемента на одному рівні вкладеності ('брата/сестри')
+
+const talkImage = document.querySelector('.talk__image img');
+console.log(talkImage);
+
+function updateImageSource() {
+    if (window.matchMedia('(max-width: 991.98px)').matches) {
+        talkImage.src = 'source/images/talk-image_small.png';
+    } else {
+        talkImage.src = 'source/images/talk-image.png';
+    }
+}
+
+updateImageSource();
+
+window.addEventListener ('resize', updateImageSource);
