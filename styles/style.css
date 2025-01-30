@@ -13,6 +13,9 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 html,
 body {
   height: 100%;
@@ -1906,7 +1909,7 @@ textarea {
   line-height: 1.56;
   font-weight: 400;
 }
-@media (max-width: 1235px) {
+@media (max-width: 1320px) {
   .subscribe {
     grid-template-columns: auto;
   }
@@ -1931,10 +1934,6 @@ textarea {
   .subscribe {
     padding: 20px;
   }
-  .subscribe__button {
-    font-size: 16px;
-    padding: 8px 16px;
-  }
    
 }
 @media (max-width: 479.98px) {
@@ -1952,6 +1951,10 @@ textarea {
     padding: 14px 0;
     max-width: 150px;
     font-size: 16px;
+  }
+  .subscribe__button {
+    font-size: 16px;
+    padding: 8px 16px;
   }
 }
 /* #endregion*/

@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuBody = document.getElementById('menuBody');
     const overlay = document.getElementById('overlay');
     const body = document.body; 
+    const headerLinks = document.querySelectorAll('.menu__link');
 
     menuToggle.addEventListener('click', () => {
         menuBody.classList.toggle('active');
@@ -17,6 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.classList.remove('open'); 
         overlay.classList.remove('active');
         body.classList.remove('body-no-scroll');
+    });
+
+    headerLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            menuBody.classList.remove('active');
+            menuToggle.classList.remove('open'); 
+            overlay.classList.remove('active');
+            body.classList.remove('body-no-scroll');
+        });
     });
 
     window.addEventListener ('resize', () => {
