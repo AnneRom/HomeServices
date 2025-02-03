@@ -21,11 +21,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     headerLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-            menuBody.classList.remove('active');
-            menuToggle.classList.remove('open'); 
-            overlay.classList.remove('active');
-            body.classList.remove('body-no-scroll');
+        link.addEventListener("click", (event) => {
+            event.preventDefault(); 
+    
+            const targetId = link.getAttribute("href"); //<a href="#AboutUs" class="menu__link">About Us</a>
+            //targetId = #AboutUs
+            const targetElement = document.querySelector(targetId); //targetElement = <section class="services" id="AboutUs">
+            
+            menuBody.classList.remove("active");
+            menuToggle.classList.remove("open");
+            overlay.classList.remove("active");
+            body.classList.remove("body-no-scroll");
+    
+            setTimeout(() => {
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            }, 300); 
         });
     });
 
